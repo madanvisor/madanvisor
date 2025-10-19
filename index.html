@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú</title>
-<style>
-  body {
-    background-color: #f5f5f5;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  h2 {
-    color: #333;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contenedor {
+      position: relative;
+      display: inline-block;
+      max-width: 500px; /* ajusta el tamaño máximo */
+      width: 90%;
+    }
+
+    .contenedor img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .boton {
+      position: absolute;
+      padding: 10px 15px;
+      background-color: rgba(0, 102, 204, 0.85);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .boton:hover {
+      background-color: rgba(0, 102, 204, 1);
+    }
+  </style>
 </head>
 <body>
+  <div class="contenedor">
+    <!-- Tu imagen de fondo -->
+    <img src="menu.png" alt="Menú principal">
 
-
-<!-- Imagen con zonas clicables -->
-<img src="menu.png" usemap="#mapaBotones" alt="Menú PDF">
-
-<map name="mapaBotones">
-  <!-- Cada area define una zona en píxeles (x1,y1,x2,y2) -->
-  <area shape="rect" coords="401,662,964,960" href="AIREADORES.pdf" target="_self" alt="Manual">
-  <area shape="rect" coords="98,985,678,1274" href="ALIMENTADORES.pdf" target="_self" alt="Catálogo">
-  <area shape="rect" coords="409,1280,989,1598" href="REPUESTOS ALIMENTADOR.pdf" target="_self" alt="Instructivo">
-</map>
-
+    <!-- Botones posicionados encima -->
+    <a href="AIREADORES.pdf" class="boton" style="top: 25%; left: 30%;" target="_self">Abrir</a>
+    <a href="ALIMENTADORES.pdf" class="boton" style="top: 50%; left: 30%;" target="_self">Abrir</a>
+    <a href="REPUESTOS ALIMENTADOR.pdf" class="boton" style="top: 75%; left: 30%;" target="_self">Abrir</a>
+  </div>
 </body>
 </html>

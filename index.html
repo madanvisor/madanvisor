@@ -82,16 +82,13 @@
   <button id="regresar" onclick="volverMenu()">Regresar al menú</button>
 
   <!-- iframe para mostrar los PDFs -->
-  <iframe id="visorPDF"></iframe>
+  <iframe id="visorPDF" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
   <script>
     function abrirPDF(archivo) {
       const visor = document.getElementById('visorPDF');
-      // Usamos object/embed para asegurar compatibilidad
-      visor.src = "about:blank"; // limpia antes
-      setTimeout(() => { 
-        visor.src = archivo; 
-      }, 50);
+      // Ponemos el PDF dentro del iframe
+      visor.src = archivo;
       visor.style.display = 'block';
       document.getElementById('menu').style.display = 'none';
       document.getElementById('regresar').style.display = 'inline-block';
